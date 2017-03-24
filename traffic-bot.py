@@ -8,7 +8,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = 'EAA....'
+PAGE_ACCESS_TOKEN = 'EAASRv3v3qVoBAK3HfdvMvaJMgSZBbRxGvrXpSeCGrTHqYMc1XpSb2OoOqb1MkmwMuR2dmaIwhSbDY8ER8TAIWd882WfpphPKbh9ecSSZAHZCmRIxMI7K5MDCNTQezkXDBHFnlZBTj7u3tlWgj86VAOGZBZB6Sba1ggJlqwpo6anAZDZD'
 
 VERIFY_TOKEN = 'my_token_for_verification'
 
