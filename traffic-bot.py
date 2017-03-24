@@ -34,7 +34,7 @@ def webhook():
     if data["object"] == "page":
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
-                if messaging_event.get("message")["attachment"]:  # delivery confirmation
+                if messaging_event.get("message")["attachment"] == object:  # delivery confirmation
                     sender_id = messaging_event["sender"]["id"] 
                     recipient_id = messaging_event["recipient"]["id"]
                     image_url = messaging_event.get("message")["attachment"]["payload"]
