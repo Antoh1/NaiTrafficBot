@@ -35,7 +35,7 @@ def webhook():
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
                 for mess_evn in messaging_event["message"]:
-                    if mess_evn["attachment"]["type"]=="image":
+                    if mess_evn["attachment"].get("type")=="image":
                         sender_id = messaging_event["sender"]["id"] 
                         recipient_id = messaging_event["recipient"]["id"]
                         image_url = mess_evn["attachment"]["payload"]
