@@ -34,12 +34,14 @@ def webhook():
     if data["object"] == "page":
         for entry in data["entry"]:
             for messaging_event in entry["messaging"]:
-                if messaging_event.get("message")["attachment"] == object:  # delivery confirmation
-                    sender_id = messaging_event["sender"]["id"] 
-                    recipient_id = messaging_event["recipient"]["id"]
-                    image_url = messaging_event.get("message")["attachment"]["payload"]
+                for mess_evn in messaging_event["message"]:
+                    if mess_evn["attachment"]["type"]=="image":
+                        sender_id = messaging_event["sender"]["id"] 
+                        recipient_id = messaging_event["recipient"]["id"]
+                        image_url = mess_evn["attachment"]["payload"]
 
-                    send_message(sender_id,"Thanks for the traffic info buddy")
+                        send_message(sender_id,"Thanks for the traffic info buddy")
+                        break
 
                 if messaging_event.get("message"):  # someone sent us a message
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
