@@ -41,8 +41,8 @@ def webhook():
 
                     send_message(sender_id, "Hey buddy, welcome to the world of bots!")
 
-                if messaging_event.get("message")["attachments"]["type"]=="image":# delivery confirmation
-                    send_message(sender_id, "Thank you for giving me the traffic info fam")
+                if messaging_event.get("delivery"):  # delivery confirmation
+                    pass
 
                 if messaging_event.get("optin"):  # optin confirmation
                     pass
