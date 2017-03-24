@@ -8,7 +8,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = 'EAASRv3v3qVoBAMbiIuu0N9GWekRh7g7kj4C99vSsDgpBybAEOTaZBThnwvXYDTVaQl56qET6R3tujYebOAgZA8wG3z2CyLF1NGYZC4TABTZAmiBuc6f3Utby5ZApN5J8brm0ivR44GzhXH0raNc6BZBckO9GJYNVLxqAxFOivVLAZDZD'
+PAGE_ACCESS_TOKEN = 'EAASRv3v3qVoBABQ2frA9yTZA11ZA5b5uQ93kzlUeUGZB0qs4iw3oAaQeaZCRJugZA2LIynsHmxdeXWJTvrcB0Cb2HrRgi6OXNy1zdHBpQhSDsIxXaTtnapIFsqZAyhjAfebsL5c1avIpq9S2rkIIjidiScg5K0ZBVbp0xaRjaXBQwZDZD'
 
 VERIFY_TOKEN = 'my_token_for_verification'
 
@@ -37,9 +37,9 @@ def webhook():
                 if messaging_event.get("message"):  # someone sent us a message
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
-                    message_text = messaging_event["message"][1]["text"]  # the message's text
+                    message_text = messaging_event["message"]["text"]  # the message's text
 
-                    send_message(sender_id,"Hey buddy, welcome to the world of bots!")
+                    send_message(sender_id,"Hey buddy, welcome to the world of bots and be cool to me!")
 
                 if messaging_event.get("delivery"):  # delivery confirmation
                     pass
